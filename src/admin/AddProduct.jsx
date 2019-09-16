@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
 import { isAuthenticated } from "../auth";
 import Layout from "../core/Layout";
 import { createProduct } from "./apiAdmin";
@@ -31,13 +30,11 @@ const AddProduct = () => {
     description,
     price,
     categories,
-    category,
-    shipping,
+
     quantity,
     loading,
     error,
     createdProduct,
-    redirectToProfile,
     formData
   } = values;
 

@@ -1,4 +1,5 @@
 import { API } from "../config";
+import queryString from "query-string";
 
 export const getProducts = sortBy => {
   return fetch(`${API}/products?sortBy=${sortBy}&order=desc&limit=6`, {
@@ -36,4 +37,32 @@ export const getFilteredProducts = (skip, limit, filters = {}) => {
       return response.json();
     })
     .catch(err => console.log(err));
+};
+
+// get products by search
+export const list = params => {
+  const query = queryString.stringify(params);
+  return fetch(`${API}/products/search?${query}`, {
+    method: "GET"
+  })
+    .then(response => response.json())
+    .catch(error => console.log(error));
+};
+
+// get one product
+export const read = productId => {
+  return fetch(`${API}/product/${productId}`, {
+    method: "GET"
+  })
+    .then(response => response.json())
+    .catch(error => console.log(error));
+};
+
+// get related products
+export const listRelated = productId => {
+  return fetch(`${API}/products/related/${productId}`, {
+    method: "GET"
+  })
+    .then(response => response.json())
+    .catch(error => console.log(error));
 };

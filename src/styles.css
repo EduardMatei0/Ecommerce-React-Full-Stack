@@ -9,6 +9,57 @@
 }
 
 /**
+ * single produc page
+ */
+
+.name {
+  background: indigo;
+  color: white;
+  font-weight: bold;
+}
+
+/* black shade from 10-1 */
+.black-10 {
+  background: #f2f2f2;
+}
+
+.black-9 {
+  background: #e6e6e6;
+}
+
+.black-9 {
+  background: #e6e6e6;
+}
+
+.black-8 {
+  background: #d9d9d9;
+}
+
+.black-7 {
+  background: #cccccc;
+}
+
+.black-6 {
+  background: #bfbfbf;
+}
+
+.black-5 {
+  background: #b3b3b3;
+}
+
+/**
+ * cart  badge
+ */
+.cart-badge,
+.cart-badge:hover {
+  border-radius: 50%;
+  padding: 2px;
+  font-size: 12px;
+  font-style: italic;
+  background: #000;
+}
+
+/**
  * product image on card
  */
 
