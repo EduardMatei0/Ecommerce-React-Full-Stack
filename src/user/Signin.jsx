@@ -29,8 +29,9 @@ const Signin = () => {
     setValues({ ...values, error: false, loading: true });
 
     signin({ email, password }).then(data => {
-      if (data.error) {
-        setValues({ ...values, error: data.error, loading: false });
+      console.log(data);
+      if (data.err) {
+        setValues({ ...values, error: data.err, loading: false });
       } else {
         authenticate(data, () => {
           setValues({
@@ -71,7 +72,7 @@ const Signin = () => {
   );
 
   // if error form input
-  const showError = () => (
+  const showError = error => (
     <div
       className="alert alert-danger"
       style={{ display: error ? "" : "none" }}
@@ -109,7 +110,7 @@ const Signin = () => {
       className="container col-md-8 offset-md-2"
     >
       {showLoading()}
-      {showError()}
+      {showError(error)}
       {singUpForm()}
       {redirectUser()}
     </Layout>

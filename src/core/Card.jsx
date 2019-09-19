@@ -107,7 +107,9 @@ const Card = ({
 
   return (
     <div className="card">
-      <div className="card-header name">{product.name}</div>
+      <div className="card-header name" style={{ background: "indigo" }}>
+        {product.name}
+      </div>
       <div className="card-body">
         {shouldRedirect(redirect)}
         <ShowImage item={product} url="product" />
